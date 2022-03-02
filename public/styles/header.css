@@ -13,13 +13,13 @@ header.page-header {
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 }
 
-.avatarImg {
+.avatar-img {
   position: absolute;
   top: 105px;
 
 }
 
-.nameTag {
+.name-tag {
   position: absolute;
   top: 350px;
   font-size: 30px;

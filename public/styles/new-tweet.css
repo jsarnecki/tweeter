@@ -19,7 +19,7 @@
 }
 
 
-.tweetButton {
+.tweet-button {
   display: flex;
   justify-content: space-between;
   padding-left: 10%;
@@ -31,7 +31,7 @@
 
 textarea #tweet-text {
   border: black;
-  width: 85%;
+  /* width: 85%; */
   border-bottom: solid;
   /* outline: none; */
   border-radius: 5px;
@@ -39,7 +39,7 @@ textarea #tweet-text {
   font-size: 15px
 }
 
-.tweetButton button {
+.tweet-button button {
   color: #dbd4c1;
   border-radius: 2px;
   background-color: blue;
@@ -108,12 +108,12 @@ hr {
   top: 15px;
 }
 
-div.userName {
+div.user-name {
   font-size: 18px;
   opacity: 75%;
 }
 
-div.tweetIcon {
+div.tweet-icon {
   opacity: 75%;
   font-size: 25px;
 }

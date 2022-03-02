@@ -35,8 +35,8 @@ $(function() {
     const $tweet = `
     <article class="tweet">
       <header class="tweet-header">
-        <img src="${tweetData.user.avatars}" class="tweetIcon">
-        <div class="userName">${tweetData.user.handle}</div>
+        <img src="${tweetData.user.avatars}" class="tweet-icon">
+        <div class="user-name">${tweetData.user.handle}</div>
       </header>
       <div class="flex-actual-tweet">
         <div class="actual-tweet">${tweetData.content.text}</div>
@@ -54,8 +54,6 @@ $(function() {
   return $tweet;
   };
 
-  // console.log($tweet);
-
   const renderTweet = function(tweetData) {
     for (let tweetInfo of tweetData) {
       const $tweet = createTweetElement(tweetInfo);
@@ -64,6 +62,25 @@ $(function() {
   };
 
   renderTweet(data);
+
+
+  $('#tweet-form-id').submit(function(event){ //on submit must be the form ID, not the button id
+    event.preventDefault();
+    let data = $('#tweet-text').val();
+    //console.log('data before serialize:', data);
+    $.ajax({
+      url: '/tweets/',
+      type: 'POST',
+      data: $(this).serialize() //Use $(this) as it becomes a jquery object 
+    })
+    .then(function(data) {
+     // alert('success');
+      console.log('data:', data);
+    })
+    .catch(function(error) {
+      console.log(`Error: ${error}`);
+    })
+  })
 
 
 });

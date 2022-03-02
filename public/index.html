@@ -42,17 +42,17 @@
     </div>
   </nav>
   <header class="page-header">
-      <img class="avatarImg" src="/images/profile-hex.png">
-      <span class="nameTag">JoshyJosh</span>
+      <img class="avatar-img" src="/images/profile-hex.png">
+      <span class="name-tag">JoshyJosh</span>
   </header>
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-      <form method="POST" action="/tweets/">
+      <form id="tweet-form-id" method="POST" action="/tweets/">
         <label for="tweet-text"></label>
         <textarea name="text" id="tweet-text" value="wordCount" placeholder="What are you humming about?"></textarea>
-        <div class="tweetButton">
-          <button type="submit">Tweet</button>
+        <div class="tweet-button">
+          <button id="tweet-button-id" type="submit">Tweet</button>
           <output name="counter" id="counterID" class="counter" for="tweet-text">140</output>
         </div>
       </form>
@@ -61,8 +61,8 @@
     <section id="tweet-container">
       <article class="tweet">
         <header class="tweet-header">
-          <div class="tweetIcon">Img</div>
-          <div class="userName">@SomeName</div>
+          <div class="tweet-icon">Img</div>
+          <div class="user-name">@SomeName</div>
         </header>
         <div class="flex-actual-tweet">
           <div class="actual-tweet">This should be the actual tweet</div>
