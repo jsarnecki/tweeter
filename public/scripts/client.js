@@ -6,38 +6,32 @@
 
 $(function() {
 
-  const tempData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+  const data = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
+      },
+      "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+      "created_at": 1646084902862
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1646070134264
-  };
-
-  // const createTweetElement = function(tweetData) {
-  //   const $actualTweet = $(`<div class="actual-tweet">${tweetData.content.text}</div>`);
-  //   const $tweetAvatar = $(`<div class="tweetIcon">${tweetData.user.avatars}</div>`);
-  //   const $tweetUser = $(`<div class="userName">${tweetData.user.handle}</div>`);
-  //   const $dataCreated = $(`<div class="time-passed">${tweetData.created_at}</div>`);
-  //   //Date as well?
-  //   let tweetObj = {
-  //     $actualTweet,
-  //     $tweetAvatar,
-  //     $tweetUser,
-  //     $dataCreated
-  //   }
-  //   return tweetObj;
-  // };
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd"
+      },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1646171302862
+    }
+  ];
 
   const createTweetElement = function(tweetData) {
-    // const $actualTweet = $(`<div class="actual-tweet">${tweetData.content.text}</div>`);
-    // const $tweetAvatar = $(`<div class="tweetIcon">${tweetData.user.avatars}</div>`);
-    // const $tweetUser = $(`<div class="userName">${tweetData.user.handle}</div>`);
-    // const $dataCreated = $(`<div class="time-passed">${tweetData.created_at}</div>`);
     const $tweet = `
     <article class="tweet">
       <header class="tweet-header">
@@ -60,13 +54,16 @@ $(function() {
   return $tweet;
   };
 
+  // console.log($tweet);
 
-  const $tweet = createTweetElement(tempData);
+  const renderTweet = function(tweetData) {
+    for (let tweetInfo of tweetData) {
+      const $tweet = createTweetElement(tweetInfo);
+      $('#tweet-container').append($tweet);
+    }
+  };
 
-  console.log($tweet);
-
-  $('#tweet-container').append($tweet);
-
+  renderTweet(data);
 
 
 });
