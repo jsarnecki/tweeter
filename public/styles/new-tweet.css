@@ -64,11 +64,16 @@ header.tweet-header {
   height: 75px;
 }
 
+div.flex-actual-tweet {
+  display: flex;
+  flex-direction: flex-start;
+}
 
-
-div.actual-tweet {
-  right: 120px;
-  font-size: 20px;
+div > div.actual-tweet {
+  top: 15px;
+  font-size: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
   position: relative;
 }
 
@@ -81,7 +86,7 @@ article footer {
 }
 
 
-.tweet-container {
+#tweet-container {
   background-color: #dbd4c1;
   width: 85%;
   height: 100%
@@ -98,7 +103,9 @@ article footer {
 }
 
 hr {
+  position: relative;
   width: 90%;
+  top: 15px;
 }
 
 div.userName {

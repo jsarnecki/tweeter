@@ -38,24 +38,25 @@ $(function() {
     // const $tweetAvatar = $(`<div class="tweetIcon">${tweetData.user.avatars}</div>`);
     // const $tweetUser = $(`<div class="userName">${tweetData.user.handle}</div>`);
     // const $dataCreated = $(`<div class="time-passed">${tweetData.created_at}</div>`);
-    const $tweet = `<section class="tweet-container">
+    const $tweet = `
     <article class="tweet">
       <header class="tweet-header">
         <img src="${tweetData.user.avatars}" class="tweetIcon">
         <div class="userName">${tweetData.user.handle}</div>
       </header>
-      <div class="actual-tweet">${tweetData.content.text}</div>
+      <div class="flex-actual-tweet">
+        <div class="actual-tweet">${tweetData.content.text}</div>
+      </div>
       <hr>
       <footer>
-        <div class="time-passed">${tweetData.created_at}</div>
+        <div class="time-passed">${timeago.format(tweetData.created_at)}</div>
         <div class="footer-buttons">
           <i class="fa-solid fa-heart fa-2xs"></i>
           <i class="fa-solid fa-retweet fa-2xs"></i>
           <i class="fa-solid fa-flag fa-2xs"></i>
         </div>
       </footer>
-    </article>
-  </section>`
+    </article>`
   return $tweet;
   };
 
@@ -64,13 +65,8 @@ $(function() {
 
   console.log($tweet);
 
-  $('.tweet-container').append($tweet);
+  $('#tweet-container').append($tweet);
 
 
 
-
-
-
-
-
-})
+});
