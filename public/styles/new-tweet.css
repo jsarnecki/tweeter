@@ -12,7 +12,10 @@
 .new-tweet form {
   padding: 20px;
   margin: 5px;
+}
 
+.red {
+  color: red;
 }
 
 
@@ -26,7 +29,7 @@
   border-color: black; */
 }
 
-textarea#tweet-text {
+textarea #tweet-text {
   border: black;
   width: 85%;
   border-bottom: solid;
@@ -40,4 +43,70 @@ textarea#tweet-text {
   color: #dbd4c1;
   border-radius: 2px;
   background-color: blue;
+}
+
+article.tweet {
+  /* display: flex; */
+  border: solid black;
+  border-radius: 5px;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+header.tweet-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 10px;
+  height: 75px;
+}
+
+
+
+div.actual-tweet {
+  right: 120px;
+  font-size: 20px;
+  position: relative;
+}
+
+article footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40%;
+  padding: 10px 15px
+}
+
+
+.tweet-container {
+  background-color: #dbd4c1;
+  width: 85%;
+  height: 100%
+}
+
+.time-passed {
+  font-size: 14px;
+  padding: 5px;
+  opacity: 75%;
+}
+
+.fa-2xs:hover {
+  color: green;
+}
+
+hr {
+  width: 90%;
+}
+
+div.userName {
+  font-size: 18px;
+  opacity: 75%;
+}
+
+div.tweetIcon {
+  opacity: 75%;
+  font-size: 25px;
 }

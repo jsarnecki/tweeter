@@ -1,16 +1,18 @@
 
 
 nav {
-  position: sticky;
+  position: fixed;
+  top: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 120px;
-  width: 100vw;
+  height: 100px;
+  width: 100%;
   background-color: #4056A1;
   font-family: 'Bungee', sans-serif;
   color: #FFFFFF;
   padding: 1.5em;
+  z-index: 999;
 }
 
 #writeTweetArrow {

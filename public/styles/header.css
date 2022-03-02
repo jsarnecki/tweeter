@@ -1,5 +1,5 @@
 
-header {
+header.page-header {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -14,10 +14,14 @@ header {
 }
 
 .avatarImg {
-  /* position: absolute; */
+  position: absolute;
+  top: 105px;
 
 }
 
-.nameTag span {
+.nameTag {
+  position: absolute;
+  top: 350px;
+  font-size: 30px;
   color: black;
 }
