@@ -6,31 +6,6 @@
 
 $(function() {
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1646084902862
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1646171302862
-    }
-  ];
-
   const createTweetElement = function(tweetData) {
     const $tweet = `
     <article class="tweet">
@@ -61,26 +36,38 @@ $(function() {
     }
   };
 
-  renderTweet(data);
-
-
   $('#tweet-form-id').submit(function(event){ //on submit must be the form ID, not the button id
     event.preventDefault();
     let data = $('#tweet-text').val();
-    //console.log('data before serialize:', data);
     $.ajax({
       url: '/tweets/',
       type: 'POST',
       data: $(this).serialize() //Use $(this) as it becomes a jquery object 
     })
     .then(function(data) {
-     // alert('success');
       console.log('data:', data);
     })
     .catch(function(error) {
       console.log(`Error: ${error}`);
     })
-  })
+  });
+
+
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets/',
+      type: 'GET'
+    })
+    .then(function(jsonData) {
+      renderTweet(jsonData);
+      //console.log('json data recieved:', jsonData);
+    })
+    .catch(function(error) {
+      console.log(`Error: ${error}`);
+    })
+  };
+
+  loadTweets(); //Now do not need the hardcoded array of tweet objects, as the get request grabs them from /tweets/
 
 
 });
