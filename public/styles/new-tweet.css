@@ -29,8 +29,26 @@
   border-color: black; */
 }
 
+#tweet-button-id {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 5px;
+  font-size: medium;
+  color: ghostwhite;
+  background-color: darkblue;
+  padding: 5px;
+  border: none;
+  box-shadow: 2px 2px 2px 1px #888888;
+}
+
+#tweet-button-id:hover {
+  background-color: #256600; /* Green */
+  color: white;
+}
+
 textarea #tweet-text {
-  border: black;
+  border: none;
+  outline: none;
   border-bottom: solid;
   border-radius: 5px;
   font-size: 15px

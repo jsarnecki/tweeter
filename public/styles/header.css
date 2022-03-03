@@ -25,3 +25,7 @@ header.page-header {
   font-size: 30px;
   color: black;
 }
+
+strong { 
+  font-weight: bold; 
+}
