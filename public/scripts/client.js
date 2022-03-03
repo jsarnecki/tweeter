@@ -36,16 +36,28 @@ $(function() {
     }
   };
 
-  $('#tweet-form-id').submit(function(event){ //on submit must be the form ID, not the button id
+  $('#tweet-form-id').submit(function(event){
     event.preventDefault();
     let data = $('#tweet-text').val();
+    //Validate before ajax request
+    if (data === null || data === "") {
+      alert("Error: Can not submit empty tweet");
+      return false;
+    }
+    if (data.length > 140) {
+      alert("Error: Tweet too long");
+      return false;
+    }
+    
     $.ajax({
       url: '/tweets/',
       type: 'POST',
-      data: $(this).serialize() //Use $(this) as it becomes a jquery object 
+      data: $(this).serialize()
     })
     .then(function(data) {
-      console.log('data:', data);
+      $('textarea').val("");
+      loadTweets();
+      // $('#tweet-container').append(data);
     })
     .catch(function(error) {
       console.log(`Error: ${error}`);
@@ -60,7 +72,7 @@ $(function() {
     })
     .then(function(jsonData) {
       renderTweet(jsonData);
-      //console.log('json data recieved:', jsonData);
+      console.log('json data recieved:', jsonData);
     })
     .catch(function(error) {
       console.log(`Error: ${error}`);
