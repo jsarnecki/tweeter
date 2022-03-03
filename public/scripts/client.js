@@ -6,6 +6,15 @@
 
 $(function() {
 
+  $('#form-error').hide(); // Where should this go?
+  $('.tweet').hide();
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function(tweetData) {
     const $tweet = `
     <article class="tweet">
@@ -14,7 +23,7 @@ $(function() {
         <div class="user-name">${tweetData.user.handle}</div>
       </header>
       <div class="flex-actual-tweet">
-        <div class="actual-tweet">${tweetData.content.text}</div>
+        <div class="actual-tweet">${escape(tweetData.content.text)}</div>
       </div>
       <hr>
       <footer>
@@ -39,16 +48,17 @@ $(function() {
   $('#tweet-form-id').submit(function(event){
     event.preventDefault();
     let data = $('#tweet-text').val();
-    //Validate before ajax request
     if (data === null || data === "") {
-      alert("Error: Can not submit empty tweet");
+      const emptyInput = $('#form-error').text('Input required!');//Make border of textarea red as well?
+      $('#form-error').slideDown();
       return false;
     }
     if (data.length > 140) {
-      alert("Error: Tweet too long");
+      const tooLong = $('#form-error').text('Tweet too long!');//Is using .text best practice here?
+      $('#form-error').slideDown();
       return false;
     }
-    
+    $('#form-error').slideUp();
     $.ajax({
       url: '/tweets/',
       type: 'POST',
@@ -57,7 +67,6 @@ $(function() {
     .then(function(data) {
       $('textarea').val("");
       loadTweets();
-      // $('#tweet-container').append(data);
     })
     .catch(function(error) {
       console.log(`Error: ${error}`);
@@ -79,7 +88,6 @@ $(function() {
     })
   };
 
-  loadTweets(); //Now do not need the hardcoded array of tweet objects, as the get request grabs them from /tweets/
-
+  loadTweets(); 
 
 });
