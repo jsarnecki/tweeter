@@ -7,7 +7,7 @@
 $(function() {
 
   $('#form-error').hide(); // Where should this go?
-  $('.tweet').hide();
+  //$('.tweet').hide();
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -45,10 +45,27 @@ $(function() {
     }
   };
 
+  const loadNewTweet = function() {
+    $.ajax({
+      url: '/tweets/',
+      type: 'GET'
+    })
+    .then(function(jsonData) {
+      console.log('json data NEW TWEET recieved:', jsonData);
+      const $tweet = createTweetElement(jsonData[jsonData.length - 1]);
+      $('#tweet-container').append($tweet);
+    })
+    .catch(function(error) {
+      console.log(`Error: ${error}`);
+    })
+  };
+
+
   $('#tweet-form-id').submit(function(event){
     event.preventDefault();
     let data = $('#tweet-text').val();
     if (data === null || data === "") {
+      //remove var call?
       const emptyInput = $('#form-error').text('Input required!');//Make border of textarea red as well?
       $('#form-error').slideDown();
       return false;
@@ -66,7 +83,7 @@ $(function() {
     })
     .then(function(data) {
       $('textarea').val("");
-      loadTweets();
+      loadNewTweet();
     })
     .catch(function(error) {
       console.log(`Error: ${error}`);
@@ -88,6 +105,7 @@ $(function() {
     })
   };
 
+  
   loadTweets(); 
 
 });
