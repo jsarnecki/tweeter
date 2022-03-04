@@ -1,9 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(function() {
 
   $('#form-error').hide();
@@ -48,12 +42,12 @@ $(function() {
   };
 
   const loadNewTweet = function() {
+    // Used to load a newly written tweet
     $.ajax({
       url: '/tweets/',
       type: 'GET'
     })
     .then(function(jsonData) {
-      console.log('json data NEW TWEET recieved:', jsonData);
       const $tweet = createTweetElement(jsonData[jsonData.length - 1]);
       $('#tweet-container').append($tweet);
     })
@@ -64,9 +58,9 @@ $(function() {
 
   $('#tweet-form-id').submit(function(event){
     event.preventDefault();
+
     let data = $('#tweet-text').val();
     if (data === null || data === "") {
-
       $('#form-error').text('⛔Input required!⛔');
       $('#form-error').slideDown();
       return false;
@@ -92,13 +86,13 @@ $(function() {
   });
 
   const loadTweets = function() {
+    // Used to load tweets that already exist in db on refresh
     $.ajax({
       url: '/tweets/',
       type: 'GET'
     })
     .then(function(jsonData) {
       renderTweet(jsonData);
-      console.log('json data recieved:', jsonData);
     })
     .catch(function(error) {
       console.log(`Error: ${error}`);
