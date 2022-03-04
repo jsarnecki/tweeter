@@ -31,3 +31,36 @@ strong {
   font-weight: bold; 
 }
 
+
+@media only screen and (min-width: 1024px) {
+
+
+header.page-header {
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  left: -55px;
+  top: 55px;
+}
+
+.avatar-img {
+  height: 300px;
+  position: absolute;
+  top: 105px;
+
+}
+
+.name-tag {
+  position: relative;
+  top: 400px;
+  font-size: 50px;
+  color: black;
+  text-shadow: 3px 3px #1f4009;
+}
+
+
+  
+}
