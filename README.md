@@ -5,7 +5,15 @@ Using HTML, CSS, JS, jQuery and AJAX on the front-end, with Node and Express on 
 
 ## Final Product
 
-*Screenshots to be updated in next commit*
+!["Tweeter desktop"](https://github.com/jsarnecki/tweeter/blob/master/docs/tweeter%231.png?raw=true)
+
+!["Tweeter mobile"](https://github.com/jsarnecki/tweeter/blob/master/docs/tweeter%232.png?raw=true)
+
+!["Tweeter desktop some tweets"](https://github.com/jsarnecki/tweeter/blob/master/docs/tweeter%233.png?raw=true)
+
+!["Tweeter mobile input error"](https://github.com/jsarnecki/tweeter/blob/master/docs/tweeter%234.png?raw=true)
+
+!["Tweeter desktop scrolled"](https://github.com/jsarnecki/tweeter/blob/master/docs/tweeter%235.png?raw=true)
 
 ## Dependencies
 
