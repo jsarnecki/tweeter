@@ -6,7 +6,7 @@
 
 $(function() {
 
-  $('#form-error').hide(); // Maybe put in CSS
+  $('#form-error').hide();
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -14,8 +14,6 @@ $(function() {
     return div.innerHTML;
   };
 
-
-  //    <span class="br"></span>
   const createTweetElement = function(tweetData) {
     const $tweet = `
     <article class="tweet">
@@ -64,18 +62,17 @@ $(function() {
     })
   };
 
-
   $('#tweet-form-id').submit(function(event){
     event.preventDefault();
     let data = $('#tweet-text').val();
     if (data === null || data === "") {
-      //remove var call?
-      const emptyInput = $('#form-error').text('⛔Input required!⛔');//Make border of textarea red as well?
+
+      $('#form-error').text('⛔Input required!⛔');
       $('#form-error').slideDown();
       return false;
     }
     if (data.length > 140) {
-      const tooLong = $('#form-error').text('⛔Tweet too long!⛔');//Is using .text best practice here?
+      $('#form-error').text('⛔Tweet too long!⛔');
       $('#form-error').slideDown();
       return false;
     }
@@ -94,7 +91,6 @@ $(function() {
     })
   });
 
-
   const loadTweets = function() {
     $.ajax({
       url: '/tweets/',
@@ -109,7 +105,6 @@ $(function() {
     })
   };
 
-  
   loadTweets(); 
 
 });

@@ -9,9 +9,7 @@ section.new-tweet {
   max-width: 660px;
   min-width: 294.5px;
   margin-bottom: 7px;
-  /* align-items: center; */
   box-shadow: 3px 3px #21440c;
-  /* display: flex; */
 }
 
 section.new-tweet:hover {
@@ -20,7 +18,6 @@ section.new-tweet:hover {
 
 .new-tweet form {
   padding-top: 20px;
-  /* margin: 5px; */
   padding-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
@@ -29,7 +26,6 @@ section.new-tweet:hover {
 .red {
   color: red;
 }
-
 
 div.tweet-button {
   display: flex;
@@ -53,7 +49,7 @@ div.tweet-button {
 }
 
 #tweet-button-id:hover {
-  background-color: #256600; /* Green */
+  background-color: #256600;
   color: white;
 }
 
@@ -115,7 +111,7 @@ div.flex-actual-tweet {
 
 div > div.actual-tweet {
   top: 15px;
-  font-size: 12px;
+  font-size: 13px;
   padding-left: 30px;
   padding-right: 30px;
   opacity: 85%;
@@ -135,7 +131,6 @@ article footer {
   height: 40%;
   padding: 10px 15px
 }
-
 
 #tweet-container {
   display: flex;
@@ -159,9 +154,9 @@ article footer {
 }
 
 hr {
-  /* position: relative; */
+  position: relative;
   width: 90%;
-  /* top: 15px; */
+  top: 15px;
 }
 
 #icon-name {
@@ -172,7 +167,6 @@ hr {
 .user-name-tag {
   font-size: 14px;
   padding: 10px;
-  /* margin-left: 10px; */
   opacity: 75%;
 }
 
@@ -185,22 +179,14 @@ div.user-name {
   opacity: 30%;
 }
 
-
 #form-error {
   position: absolute;
   width: 75.5%;
-  /* height: 45px; */
-  /* border: 3px solid red;
-  border-radius: 5px; */
   color: red;
   font-size: 14px;
   text-shadow: 1px 1px rgba(124, 18, 18, 0.2);
 }
 
-.br {
-  display: block;
-  margin-bottom: 5px;
-}
 
 @media only screen and (min-width: 1024px) {
 
@@ -213,7 +199,7 @@ div.user-name {
     width: 100%;
     max-width: 660px;
     min-width: 294.5px;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
   }
   
   section.new-tweet:hover {
@@ -222,7 +208,6 @@ div.user-name {
   
   .new-tweet form {
     padding-top: 20px;
-    /* margin: 5px; */
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -250,7 +235,7 @@ div.user-name {
   }
   
   #tweet-button-id:hover {
-    background-color: #256600; /* Green */
+    background-color: #256600;
     color: white;
   }
   
@@ -287,7 +272,7 @@ div.user-name {
     width: 100%;
     max-width: 660px;
     min-width: 294.5px;
-    margin-bottom: 7px;
+    margin-bottom: 15px;
     align-items: center;
     box-shadow: 3px 3px #21440c;
   }
@@ -308,12 +293,11 @@ div.user-name {
   div.flex-actual-tweet {
     display: flex;
     flex-direction: flex-start;
-    margin-bottom: 20px;
   }
   
   div > div.actual-tweet {
     top: 15px;
-    font-size: 12px;
+    font-size: 15px;
     padding-left: 30px;
     padding-right: 30px;
     opacity: 85%;
@@ -333,7 +317,6 @@ div.user-name {
     height: 40%;
     padding: 10px 15px
   }
-  
   
   #tweet-container {
     display: flex;
@@ -358,7 +341,6 @@ div.user-name {
   .user-name-tag {
     font-size: 14px;
     padding: 10px;
-    /* margin-left: 10px; */
     opacity: 75%;
   }
   
@@ -371,21 +353,13 @@ div.user-name {
     opacity: 30%;
   }
   
-  
   #form-error {
     position: absolute;
     width: 75.5%;
-    /* height: 45px; */
-    /* border: 3px solid red;
-    border-radius: 5px; */
     color: red;
     font-size: 14px;
+    right: -80px;
     text-shadow: 1px 1px rgba(124, 18, 18, 0.2);
-  }
-  
-  .br {
-    display: block;
-    margin-bottom: 5px;
   }
 
 }

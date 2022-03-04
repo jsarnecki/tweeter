@@ -29,8 +29,6 @@ body {
   align-items: center;
   width: 90%;
   color: black;
-  /* background-color: #f4f1ec; */
-  /* padding: 5%; */
   margin: 0 auto;
   text-align: center;
 }
@@ -64,5 +62,4 @@ body {
     z-index: 500;
   }
   
-
 }
