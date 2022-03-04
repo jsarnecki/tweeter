@@ -24,8 +24,10 @@ header.page-header {
   top: 350px;
   font-size: 30px;
   color: black;
+  text-shadow: 3px 3px #1f4009;
 }
 
 strong { 
   font-weight: bold; 
 }
+

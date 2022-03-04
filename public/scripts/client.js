@@ -17,9 +17,13 @@ $(function() {
 
   const createTweetElement = function(tweetData) {
     const $tweet = `
+    <span class="br"></span>
     <article class="tweet">
       <header class="tweet-header">
-        <img src="${tweetData.user.avatars}" class="tweet-icon">
+        <div id="icon-name">
+          <img src="${tweetData.user.avatars}" class="tweet-icon">
+          <div class="user-name-tag">${tweetData.user.name}</div>
+        </div>
         <div class="user-name">${tweetData.user.handle}</div>
       </header>
       <div class="flex-actual-tweet">
@@ -34,7 +38,8 @@ $(function() {
           <i class="fa-solid fa-flag fa-2xs"></i>
         </div>
       </footer>
-    </article>`
+    </article>
+    <span class="br"></span>`
   return $tweet;
   };
 
@@ -66,12 +71,12 @@ $(function() {
     let data = $('#tweet-text').val();
     if (data === null || data === "") {
       //remove var call?
-      const emptyInput = $('#form-error').text('Input required!');//Make border of textarea red as well?
+      const emptyInput = $('#form-error').text('⛔Input required!⛔');//Make border of textarea red as well?
       $('#form-error').slideDown();
       return false;
     }
     if (data.length > 140) {
-      const tooLong = $('#form-error').text('Tweet too long!');//Is using .text best practice here?
+      const tooLong = $('#form-error').text('⛔Tweet too long!⛔');//Is using .text best practice here?
       $('#form-error').slideDown();
       return false;
     }
