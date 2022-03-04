@@ -6,8 +6,7 @@
 
 $(function() {
 
-  $('#form-error').hide(); // Where should this go?
-  //$('.tweet').hide();
+  $('#form-error').hide(); // Maybe put in CSS
 
   const escape = function (str) {
     let div = document.createElement("div");
@@ -15,9 +14,10 @@ $(function() {
     return div.innerHTML;
   };
 
+
+  //    <span class="br"></span>
   const createTweetElement = function(tweetData) {
     const $tweet = `
-    <span class="br"></span>
     <article class="tweet">
       <header class="tweet-header">
         <div id="icon-name">
@@ -38,8 +38,7 @@ $(function() {
           <i class="fa-solid fa-flag fa-2xs"></i>
         </div>
       </footer>
-    </article>
-    <span class="br"></span>`
+    </article>`
   return $tweet;
   };
 
